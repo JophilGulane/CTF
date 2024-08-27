@@ -11,7 +11,14 @@
 ### Shutdown WSL
 - Inside of CMD: wsl --shutdown
 ## Go-To Commands When CTFing:
-1. **`chmod +x <filename>`**: Change file permissions to make it executable.
++ **`wget <URL>`**: Download files from the web.
+    - Example:
+      ```bash
+      wget http://example.com/file.txt
+      ```
+    - This command will download the file `file.txt` from the specified URL and save it in the current directory.
+
++ **`chmod +x <filename>`**: Change file permissions to make it executable.
    - Example:
      ```bash
      chmod +x exploit.sh
