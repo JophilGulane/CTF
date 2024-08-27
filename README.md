@@ -10,6 +10,18 @@
 - Inside of Kali WSL: kex --sl -s
 ### Shutdown WSL
 - Inside of CMD: wsl --shutdown
+
+## Top 3 Websites to Practice CTF
+
+1. **[Hack The Box](https://www.hackthebox.com/)**
+   - A platform that offers a wide range of challenges, from beginner to advanced, focusing on various aspects of cybersecurity. Users can solve challenges, hack machines, and improve their skills in a competitive environment.
+
+2. **[TryHackMe](https://tryhackme.com/)**
+   - An interactive learning platform that provides guided lessons on cybersecurity topics through hands-on challenges. It’s beginner-friendly and covers everything from basic networking to advanced penetration testing.
+
+3. **[PicoCTF](https://picoctf.org/)**
+   - A beginner-friendly CTF platform designed by Carnegie Mellon University. It offers a series of challenges in various categories like cryptography, forensics, and web exploitation, aimed at helping students and newcomers learn about cybersecurity.
+
 ## Go-To Commands When CTFing:
 + **`wget <URL>`**: Download files from the web.
     - Example:
