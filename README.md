@@ -22,6 +22,17 @@
 3. **[PicoCTF](https://picoctf.org/)**
    - A beginner-friendly CTF platform designed by Carnegie Mellon University. It offers a series of challenges in various categories like cryptography, forensics, and web exploitation, aimed at helping students and newcomers learn about cybersecurity.
 
+## Best Websites to Decode Things in CTF
+
+1. **[CyberChef](https://gchq.github.io/CyberChef/)**
+   - A web-based tool that provides a wide range of functionalities for decoding, encoding, and analyzing data. It's great for quickly solving challenges involving different encodings, cryptographic algorithms, and data manipulation tasks.
+
+2. **[Online Decoder](https://www.dcode.fr/)**
+   - A website that offers numerous tools for decoding and solving various types of puzzles, including cryptographic, steganographic, and format-specific challenges. It’s handy for working with different ciphers and encodings.
+
+3. **[Base64 Decode](https://www.base64decode.net/)**
+   - A simple and effective tool for decoding Base64 encoded strings. It's useful for challenges that involve encoding or decoding data in Base64 format.
+
 ## Go-To Commands When CTFing:
 + **`wget <URL>`**: Download files from the web.
     - Example:
