@@ -24,13 +24,13 @@
      chmod +x exploit.sh
      ```
 
-2. **`./<filename>`**: Run the file.
++ **`./<filename>`**: Run the file.
    - Example:
      ```bash
      ./exploit.sh
      ```
 
-3. **`file ./<filename>`**: View file contents or determine file type.
++ **`file ./<filename>`**: View file contents or determine file type.
    - Example:
      ```bash
      file ./mystery_file
@@ -40,7 +40,7 @@
      mystery_file: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked
      ```
 
-4. **`strings <filename>`**: Perform static analysis to extract readable strings from the file.
++ **`strings <filename>`**: Perform static analysis to extract readable strings from the file.
    - Example:
      ```bash
      strings mystery_file
@@ -50,8 +50,8 @@
      /bin/sh
      GLIBC_2.0
      ```
-     
-5. **`ltrace <filename>`**: Trace library calls made by a program.
+
++ **`ltrace <filename>`**: Trace library calls made by a program.
    - Example:
      ```bash
      ltrace ./mystery_file
@@ -61,7 +61,7 @@
      __libc_start_main(0x4005ed, 1, 0x7ffdf1f37e18, 0x4006f0, 0x400770 <unfinished ...>
      ```
 
-6. **`strace <filename>`**: Trace system calls and signals made by a program.
++ **`strace <filename>`**: Trace system calls and signals made by a program.
    - Example:
      ```bash
      strace ./mystery_file
@@ -71,7 +71,7 @@
      execve("./mystery_file", ["./mystery_file"], 0x7ffd41c0) = 0
      ```
 
-7. **`xxd <filename>`**: Create a hexdump of a file, useful for analyzing binary data.
++ **`xxd <filename>`**: Create a hexdump of a file, useful for analyzing binary data.
    - Example:
      ```bash
      xxd mystery_file
@@ -81,7 +81,7 @@
      00000000: 7f45 4c46 0201 0100 0000 0000 0000 0000  .ELF............
      ```
 
-8. **`grep <pattern> <filename>`**: Search for a specific pattern within a file.
++ **`grep <pattern> <filename>`**: Search for a specific pattern within a file.
    - Example:
      ```bash
      grep "password" config.txt
@@ -91,25 +91,25 @@
      password=supersecretpassword
      ```
 
-9. **`nc <hostname> <port>`**: Use Netcat to connect to a remote server, often for interacting with remote CTF challenges.
++ **`nc <hostname> <port>`**: Use Netcat to connect to a remote server, often for interacting with remote CTF challenges.
    - Example:
      ```bash
      nc example.com 12345
      ```
 
-10. **`tar -xvf <filename>`**: Extract files from a tar archive.
++ **`tar -xvf <filename>`**: Extract files from a tar archive.
     - Example:
       ```bash
       tar -xvf archive.tar
       ```
 
-11. **`unzip <filename>`**: Extract files from a zip archive.
++ **`unzip <filename>`**: Extract files from a zip archive.
     - Example:
       ```bash
       unzip archive.zip
       ```
 
-12. **`md5sum <filename>` / `sha256sum <filename>`**: Calculate and verify the hash of a file.
++ **`md5sum <filename>`** / **`sha256sum <filename>`**: Calculate and verify the hash of a file.
     - Example:
       ```bash
       md5sum mystery_file
@@ -119,7 +119,7 @@
       d41d8cd98f00b204e9800998ecf8427e  mystery_file
       ```
 
-13. **`gdb <filename>`**: Start the GNU Debugger to analyze and debug binary files.
++ **`gdb <filename>`**: Start the GNU Debugger to analyze and debug binary files.
     - Example:
       ```bash
       gdb ./mystery_file
@@ -129,4 +129,5 @@
       run
       break main
       ```
+
 
