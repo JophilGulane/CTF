@@ -4,4 +4,4 @@ Can you find the flag in file? This would be really tedious to look through manu
 + using grep command you can find the flag.
   ```bash
   grep picoCTF file
-```
+  ```
