@@ -10,7 +10,7 @@ def str_xor(secret, key):
 ###############################################################################
 
 
-flag_enc = open("/home/jays/Desktop/picoCTF/PasswdCrack1/level1_flag.enc", 'rb').read()
+flag_enc = open('level1.flag.txt.enc', 'rb').read()
 
 
 
