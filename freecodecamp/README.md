@@ -6,7 +6,7 @@
  `eog` - eye of gnome, image viewer
  `unzip` - unzip a zip file
  `file` - show the real file type 
-  `cat - show the content of the file
+  `cat` - show the content of the file
   `nano` - open file in text editor
   `curl` - used to retrieve web pages
   `chmod` - change mode
