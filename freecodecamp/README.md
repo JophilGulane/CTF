@@ -1,25 +1,26 @@
 ## installs
 
 ## CLI Commands
- `wget` - downloads file using cli
- `nautilus .` - open explorer in ubuntu
- `eog` - eye of gnome, image viewer
- `unzip` - unzip a zip file
- `file` - show the real file type 
-  `cat` - show the content of the file
-  `nano` - open file in text editor
-  `curl` - used to retrieve web pages
-  `chmod` - change mode
-  `nc` - netcat to connect to another network
-  `rev` - reverse a text
-  `strings` - get all the strings out of the file
-  `whoami` - gets the username
-  `tac` - reverse of cat so it will print reversely
-  `tr -d <text>` - deletes those texts
-  `ceasar n` - decode ceasar based on n(number)
-  `env` - display env variables
-  `hexedit` - open hex editor
-  `ssh` - connect to a shell
+- `wget` - downloads files using the command line
+- `nautilus .` - open the file explorer in Ubuntu
+- `eog` - Eye of GNOME, an image viewer
+- `unzip` - unzip a ZIP file
+- `file` - show the real file type
+- `cat` - show the content of the file
+- `nano` - open a file in a text editor
+- `curl` - retrieve web pages
+- `chmod` - change file permissions
+- `nc` - Netcat, used to connect to another network
+- `rev` - reverse the characters in a text
+- `strings` - extract all strings from a file
+- `whoami` - display the current username
+- `tac` - reverse the order of lines in a file (opposite of `cat`)
+- `tr -d <text>` - delete specified characters from the input
+- `ceasar n` - decode a Caesar cipher with a shift of n
+- `env` - display environment variables
+- `hexedit` - open a file in a hex editor
+- `ssh` - connect to a remote shell
+
   
 ### CLI Snippets
 
