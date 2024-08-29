@@ -7,5 +7,5 @@ $ sudo apt-get install imagemagick
 ```
 + Then you can use the convert funtion like this.
 ```bash
-convert input.pdf output.jpg
+convert <FIleName.pdf> <OutputName.jpg>
 ```
