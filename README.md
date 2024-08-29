@@ -152,5 +152,24 @@
       run
       break main
       ```
++ **`grep <pattern> <file>`**: Search for a specific pattern within a file.
+    - Example:
+      ```bash
+      grep "password" secrets.txt
+      ```
+    - This command searches for the word "password" within the file `secrets.txt` and displays all matching lines.
 
++ **`feh <file>`**: Open an image file using the feh image viewer.
+    - Example:
+      ```bash
+      feh image.png
+      ```
+    - This command will open the image `image.png` using the `feh` image viewer, which is often used in CTFs for viewing images quickly.
+
++ **`zbarimg <file>`**: Scan and decode barcodes or QR codes from an image file.
+    - Example:
+      ```bash
+      zbarimg qr_code.png
+      ```
+    - This command scans the image `qr_code.png` for barcodes or QR codes and prints the decoded content to the terminal.
 
