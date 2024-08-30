@@ -1,4 +1,6 @@
-# Useful CTF Tools and Command-line Tips
+# CTF Guide 
+## Guide Links
++ [The CTF Primer](https://primer.picoctf.org/)
 ## Tools:
 ### Operating System
 - Kali WSL
