@@ -5,6 +5,8 @@
 - Win KeX
 ### How To Install WSL
 - [Install WSL Tutorial](https://learn.microsoft.com/en-us/windows/wsl/install)
+### How To Install Kali WSL
+- [Install Kali WSL](https://www.kali.org/docs/wsl/wsl-preparations/)
 ## Basic Kali Linux Command-line Tips
 ### Run Win-KeX
 - Inside of Kali WSL: kex --win -s
