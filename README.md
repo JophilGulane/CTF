@@ -8,6 +8,53 @@
 ### How To Install Kali WSL
 - [Install Kali WSL](https://www.kali.org/docs/wsl/wsl-preparations/)
 ## Basic Kali Linux Command-line Tips
+## Navigating the File System
+- `pwd`: Print the current working directory.
+- `cd [directory]`: Change the current directory.
+  - Example: `cd /usr/bin`
+- `ls`: List files and directories in the current directory.
+  - Use `ls -la` to list all files, including hidden ones, with detailed information.
+
+## Managing Files and Directories
+- `cp [source] [destination]`: Copy files or directories.
+  - Example: `cp file.txt /home/user/`
+- `mv [source] [destination]`: Move or rename files or directories.
+  - Example: `mv oldname.txt newname.txt`
+- `rm [file]`: Remove a file.
+  - Use `rm -r [directory]` to remove a directory and its contents recursively.
+- `touch [filename]`: Create a new, empty file.
+- `mkdir [directory]`: Create a new directory.
+
+## User Management
+- `whoami`: Display the current logged-in user.
+- `sudo [command]`: Execute a command as the superuser.
+  - Example: `sudo apt update`
+- `passwd [username]`: Change the password for a user.
+  - Example: `passwd root`
+
+## Networking Commands
+- `ifconfig`: Display or configure network interfaces.
+- `ping [hostname or IP]`: Test connectivity to a host.
+  - Example: `ping google.com`
+- `netstat -tuln`: Display listening network connections and services.
+- `nmap [target]`: Network exploration and security auditing tool.
+  - Example: `nmap -sP 192.168.1.0/24`
+
+## System Information
+- `uname -a`: Display detailed information about the system.
+- `df -h`: Show disk space usage in human-readable format.
+- `top`: Display tasks and system resource usage in real-time.
+- `ps aux`: List all running processes with detailed information.
+
+## Package Management
+- `apt update`: Update the package list.
+- `apt upgrade`: Upgrade all installed packages to their latest versions.
+- `apt install [package]`: Install a new package.
+  - Example: `apt install nmap`
+- `apt remove [package]`: Remove an installed package.
+  - Example: `apt remove nmap`
+
+## Kex Command-line Tips
 ### Run Win-KeX
 - Inside of Kali WSL: kex --win -s
 ### Seamless Mode
