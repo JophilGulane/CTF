@@ -113,7 +113,7 @@ Challenges related to web applications and their security.
 6. **Exploit Vulnerabilities to Access the Flag**: Once a vulnerability is found, exploit it to gain unauthorized access or retrieve sensitive data that contains the flag.
 
 
-`# Important Commands
+# Important Commands
 
 ## Exploit
 
