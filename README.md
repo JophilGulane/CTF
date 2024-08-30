@@ -234,7 +234,7 @@ done
 -   **LIST**: A sequence of values that the loop will iterate over.
 -   **COMMANDS**: One or more commands that are executed for each value in the list.
 
-## Example: Loop with `seq` Command
+## Loop with `seq` Command
 
 One common use case is iterating over a sequence of numbers. The `seq` command generates a sequence of numbers. Here’s an example:
 
@@ -248,7 +248,7 @@ done`
 -   `for i in $(seq -w 001 999)`: The loop assigns each number in the sequence to the variable `i` and iterates through them.
 -   `echo "Hello World $i"`: Prints "Hello World" followed by the current number.
 
-### Output:
+**Output**:
 
 When you run this script, it will output:
 
@@ -260,7 +260,7 @@ Hello World 003
 Hello World 999 
 ```
 
-## Example of `seq` without `-w`:
+## Loop with `seq` Command without `-w`:
 The `-w` option in the `seq` command in Linux ensures that all output numbers have the same width by padding them with leading zeros, if necessary. This is particularly useful when generating sequences with numbers that need to be aligned or have a consistent format.
 
 ```bash
@@ -280,7 +280,7 @@ The `-w` option in the `seq` command in Linux ensures that all output numbers ha
 9
 10
 ```
-## Example of `seq` with `-w`:
+## Loop with `seq` Command with `-w`:
 
 ```bash
 `seq -w 1 10` 
