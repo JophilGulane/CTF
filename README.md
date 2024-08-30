@@ -1,6 +1,8 @@
-# CTF Guide 
+# A Comprehensive Guide to Capture the Flag Challenges
+
 ## Guide Links
-+ [The CTF Primer](https://primer.picoctf.org/)
+[The CTF Primer](https://primer.picoctf.org/)
+
 ## Tools:
 ### Operating System
 - Kali WSL
