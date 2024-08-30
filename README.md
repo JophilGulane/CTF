@@ -104,16 +104,6 @@
      00000000: 7f45 4c46 0201 0100 0000 0000 0000 0000  .ELF............
      ```
 
-+ **`grep <pattern> <filename>`**: Search for a specific pattern within a file.
-   - Example:
-     ```bash
-     grep "password" config.txt
-     ```
-   - Output might include:
-     ```
-     password=supersecretpassword
-     ```
-
 + **`nc <hostname> <port>`**: Use Netcat to connect to a remote server, often for interacting with remote CTF challenges.
    - Example:
      ```bash
