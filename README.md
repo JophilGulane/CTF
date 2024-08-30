@@ -239,13 +239,13 @@ done
 One common use case is iterating over a sequence of numbers. The `seq` command generates a sequence of numbers. Here’s an example:
 
 ```bash
-`for i in $(seq 001 999)
+`for i in $(seq -w 001 999)
 do
     echo "Hello World $i"
 done` 
 ```
--   `$(seq 001 999)`: Generates a sequence of numbers from 001 to 999.
--   `for i in $(seq 001 999)`: The loop assigns each number in the sequence to the variable `i` and iterates through them.
+-   `$(seq -w 001 999)`: Generates a sequence of numbers from 001 to 999.
+-   `for i in $(seq -w 001 999)`: The loop assigns each number in the sequence to the variable `i` and iterates through them.
 -   `echo "Hello World $i"`: Prints "Hello World" followed by the current number.
 
 ### Output:
@@ -259,9 +259,9 @@ Hello World 003
 ...
 Hello World 999 
 ```
-The `-w` option in the `seq` command in Linux ensures that all output numbers have the same width by padding them with leading zeros, if necessary. This is particularly useful when generating sequences with numbers that need to be aligned or have a consistent format.
 
-### Example without `-w`:
+## Example of `seq` without `-w`:
+The `-w` option in the `seq` command in Linux ensures that all output numbers have the same width by padding them with leading zeros, if necessary. This is particularly useful when generating sequences with numbers that need to be aligned or have a consistent format.
 
 ```bash
 `seq 1 10` 
@@ -280,7 +280,7 @@ The `-w` option in the `seq` command in Linux ensures that all output numbers ha
 9
 10
 ```
-### Example with `-w`:
+## Example of `seq` with `-w`:
 
 ```bash
 `seq -w 1 10` 
@@ -300,7 +300,7 @@ The `-w` option in the `seq` command in Linux ensures that all output numbers ha
 ```
 In the second example, `-w` ensures that all numbers have two digits by padding with zeros. If the sequence was longer (e.g., up to 100), it would pad the numbers with two zeros for single-digit numbers and one zero for two-digit numbers, ensuring that all numbers are three characters long.
 
-### Looping Over a List of Files
+## Looping Over a List of Files
 
 ```bash
 `for file in *.txt
@@ -308,7 +308,7 @@ do
     echo "Processing $file"
 done` 
 ```
-### Looping with a Step Value
+## Looping with a Step Value
 
 ```bash
 `for i in $(seq 0 2 10)
