@@ -214,3 +214,119 @@
       ```
     - This command scans the image `qr_code.png` for barcodes or QR codes and prints the decoded content to the terminal.
 
+
+# Guide to Loops in the Linux Command Line
+
+Loops in the Linux command line are powerful tools that allow you to automate repetitive tasks. This guide will cover the basics of `for` loops, including syntax and examples.
+
+## Basic Syntax of a `for` Loop
+
+The basic syntax for a `for` loop in the Linux shell is as follows:
+
+```bash
+for VARIABLE in LIST
+do
+    COMMANDS
+done
+``` 
+
+-   **VARIABLE**: This is a placeholder that takes the value of each element in the list, one at a time.
+-   **LIST**: A sequence of values that the loop will iterate over.
+-   **COMMANDS**: One or more commands that are executed for each value in the list.
+
+## Example: Loop with `seq` Command
+
+One common use case is iterating over a sequence of numbers. The `seq` command generates a sequence of numbers. Here’s an example:
+
+```bash
+`for i in $(seq 001 999)
+do
+    echo "Hello World $i"
+done` 
+```
+### Explanation:
+
+-   `$(seq 001 999)`: Generates a sequence of numbers from 001 to 999.
+-   `for i in $(seq 001 999)`: The loop assigns each number in the sequence to the variable `i` and iterates through them.
+-   `echo "Hello World $i"`: Prints "Hello World" followed by the current number.
+
+### Output:
+
+When you run this script, it will output:
+
+```output
+Hello World 001
+Hello World 002
+Hello World 003
+...
+Hello World 999 
+```
+The `-w` option in the `seq` command in Linux ensures that all output numbers have the same width by padding them with leading zeros, if necessary. This is particularly useful when generating sequences with numbers that need to be aligned or have a consistent format.
+
+### Example without `-w`:
+
+```bash
+`seq 1 10` 
+```
+**Output:**
+
+```output
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+### Example with `-w`:
+
+```bash
+`seq -w 1 10` 
+```
+**Output:**
+```output
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+```
+In the second example, `-w` ensures that all numbers have two digits by padding with zeros. If the sequence was longer (e.g., up to 100), it would pad the numbers with two zeros for single-digit numbers and one zero for two-digit numbers, ensuring that all numbers are three characters long.
+
+## More Examples
+
+### Looping Over a List of Files
+
+```bash
+`for file in *.txt
+do
+    echo "Processing $file"
+done` 
+```
+### Looping with a Step Value
+
+```bash
+`for i in $(seq 0 2 10)
+do
+    echo "Number: $i"
+done` 
+```
+This loop will output:
+
+```output
+Number: 0
+Number: 2
+Number: 4
+Number: 6
+Number: 8
+Number: 10
+```
