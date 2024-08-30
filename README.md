@@ -244,8 +244,6 @@ do
     echo "Hello World $i"
 done` 
 ```
-### Explanation:
-
 -   `$(seq 001 999)`: Generates a sequence of numbers from 001 to 999.
 -   `for i in $(seq 001 999)`: The loop assigns each number in the sequence to the variable `i` and iterates through them.
 -   `echo "Hello World $i"`: Prints "Hello World" followed by the current number.
@@ -301,8 +299,6 @@ The `-w` option in the `seq` command in Linux ensures that all output numbers ha
 10
 ```
 In the second example, `-w` ensures that all numbers have two digits by padding with zeros. If the sequence was longer (e.g., up to 100), it would pad the numbers with two zeros for single-digit numbers and one zero for two-digit numbers, ensuring that all numbers are three characters long.
-
-## More Examples
 
 ### Looping Over a List of Files
 
