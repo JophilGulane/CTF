@@ -1,7 +1,7 @@
 ## Important Links
-[CTF Write-Ups](https://ctftime.org/writeups)
-[p0isonp4wn - Hack4Gov 2019 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-hack4gov-2019-ctf-writeups-9c405f4d9e16)
-[p0isonp4wn - Haxxor4.0 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-haxxor4-0-ctf-writeups-31ca7ce6570d)
++ [CTF Write-Ups](https://ctftime.org/writeups)
++ [p0isonp4wn - Hack4Gov 2019 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-hack4gov-2019-ctf-writeups-9c405f4d9e16)
++ [p0isonp4wn - Haxxor4.0 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-haxxor4-0-ctf-writeups-31ca7ce6570d)
 
 ## CATEGORIES
 
