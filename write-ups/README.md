@@ -581,22 +581,17 @@ john --incremental hash_file.txt
 ```
 ## Cracking RAR Files
 ### Extracting Hash from RAR File
-1. Install rar2john:
-
-```bash
-sudo apt-get install john
-```
-2. Extract the hash:
+1. Extract the hash:
 
 ```bash
 rar2john yourfile.rar > rar.hash
 ```
-3. Run John against the RAR hash:
+2. Run John against the RAR hash:
 
 ```bash
 john --wordlist=/path/to/wordlist.txt rar.hash
 ```
-4. View the cracked password:
+3. View the cracked password:
 
 ```bash
 john --show rar.hash
