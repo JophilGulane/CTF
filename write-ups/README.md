@@ -500,3 +500,132 @@ Break in main at 0x4011b6: file main.c, line 5.`
 `burpsuite` 
 ```
 -   **Example Output**: The output is graphical and includes features for intercepting HTTP requests, scanning for vulnerabilities, and more.
+
+# John the Ripper Tutorial
+
+**John the Ripper** is a fast password-cracking tool, primarily used to detect weak Unix passwords. It supports a wide range of encrypted password formats including several crypt password hash types commonly found on Unix-based systems.
+
+## Table of Contents
+1. [Installation](#installation)
+2. [Basic Usage](#basic-usage)
+3. [Using Wordlists](#using-wordlists)
+4. [Cracking RAR Files](#cracking-rar-files)
+5. [Advanced Options](#advanced-options)
+6. [Tips & Best Practices](#tips--best-practices)
+7. [Conclusion](#conclusion)
+
+## Installation
+
+### On Linux
+```bash
+sudo apt-get update
+sudo apt-get install john
+```
+### On macOS
+```bash
+brew install john
+```
+### On Windows
+```plaintext
+Download the latest John the Ripper from OpenWall.
+Extract the files and add the run directory to your system’s PATH.
+```
+## Basic Usage
+### Cracking a Unix Password Hash
+1. Create a file with the password hash:
+
+```plaintext
+user:$1$abc123$XYZ987654321:1000:1000::/home/user:/bin/bash
+```
+### Run John against the file:
+```bash
+john --format=crypt hash_file.txt
+```
+### Check the cracked password:
+
+```bash
+john --show hash_file.txt
+```
+## Cracking a Simple Password Hash (e.g., MD5)
+1. Create a file with the hash:
+
+```plaintext
+$1$xyz$abcd12345678
+```
+2. Run John:
+
+```bash
+john hash_file.txt
+```
+### View the password:
+
+```bash
+john --show hash_file.txt
+```
+## Using Wordlists
+John the Ripper can use wordlists to try passwords.
+
+### Using a Default Wordlist
+```bash
+john --wordlist=/usr/share/wordlists/rockyou.txt hash_file.txt
+```
+### Using a Custom Wordlist
+```bash
+john --wordlist=/path/to/your/wordlist.txt hash_file.txt
+```
+### Incremental Mode (Brute-force)
+John can also brute-force passwords by trying every possible combination of characters:
+
+```bash
+john --incremental hash_file.txt
+```
+## Cracking RAR Files
+### Extracting Hash from RAR File
+1. Install rar2john:
+
+```bash
+sudo apt-get install john
+```
+2. Extract the hash:
+
+```bash
+rar2john yourfile.rar > rar.hash
+```
+3. Run John against the RAR hash:
+
+```bash
+john --wordlist=/path/to/wordlist.txt rar.hash
+```
+4. View the cracked password:
+
+```bash
+john --show rar.hash
+```
+## Advanced Options
+### Setting a Specific Charset
+You can set a custom charset for John to use:
+
+```bash
+john --incremental --custom-charset=?lud hash_file.txt
+```
++ ?l = lowercase letters
++ ?u = uppercase letters
++ ?d = digits
+### Limiting Password Length
+You can limit the maximum length of passwords John attempts:
+
+```bash
+john --max-length=8 hash_file.txt
+```
+### Resume Cracking
+If you stop John during an operation, you can resume it later:
+
+```bash
+john --restore
+```
+## Tips & Best Practices
+1. Use a Strong Wordlist: A good wordlist can significantly reduce the time required to crack a password.
+2. Combine Wordlists: Use cat to combine multiple wordlists into one.
+3. Regularly Update John: Ensure you have the latest version of John to benefit from new features and optimizations.
+4. Monitor System Resources: Cracking passwords is CPU-intensive, so monitor your system to avoid overloading it.
+5. Legal Use Only: Ensure you have permission to crack any passwords. Unauthorized access is illegal and unethical.
