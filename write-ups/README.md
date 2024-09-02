@@ -652,4 +652,4 @@ john --restore
 ```bash   
 `sudo apt-get install sonic-visualiser` 
 ```
-sudo apt-get install sonic-visualiser
+
