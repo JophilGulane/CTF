@@ -648,4 +648,8 @@ john --restore
 -   **Transcription Assistance**: The visualization tools can assist in transcribing difficult-to-hear audio by isolating specific frequencies or components.
 
 ### On Linux
-```sudo apt-get install sonic-visualiser
+
+```bash   
+`sudo apt-get install sonic-visualiser` 
+```
+sudo apt-get install sonic-visualiser
