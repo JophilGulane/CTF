@@ -501,6 +501,9 @@ Break in main at 0x4011b6: file main.c, line 5.`
 ```
 -   **Example Output**: The output is graphical and includes features for intercepting HTTP requests, scanning for vulnerabilities, and more.
 
+
+
+
 # John the Ripper Tutorial
 
 **John the Ripper** is a fast password-cracking tool, primarily used to detect weak Unix passwords. It supports a wide range of encrypted password formats including several crypt password hash types commonly found on Unix-based systems.
@@ -624,3 +627,25 @@ john --restore
 3. Regularly Update John: Ensure you have the latest version of John to benefit from new features and optimizations.
 4. Monitor System Resources: Cracking passwords is CPU-intensive, so monitor your system to avoid overloading it.
 5. Legal Use Only: Ensure you have permission to crack any passwords. Unauthorized access is illegal and unethical.
+
+
+# DCODE CIPHER IDENTIFIER
+
+**DCODE CIPHER IDENTIFIER** is a computer tool designed to recognize encryption/encoding from a text message. The detector performs cryptanalysis, examines various features of the text, such as letter distribution, character repetition, word length, etc. to determine the type of encryption and guide users to the right tools based on the type of code or encryption identified.
+
+## link: https://www.dcode.fr/cipher-identifier
+
+
+# Sonic visualiser 
+
+## Usage:
+
+
+-   **Analyze Hidden Messages**: Investigators can use it to uncover hidden messages in audio files, such as those embedded in spectrograms, often seen in steganography.
+-   **Identify Audio Manipulation**: It helps in detecting tampering or editing within audio recordings by examining inconsistencies in waveforms or spectrograms.
+-   **Speaker Identification**: The tool can aid in voice analysis, potentially helping to identify speakers in a forensic investigation.
+-   **Content Authentication**: By analyzing the spectral content, investigators can determine whether an audio file has been altered or manipulated.
+-   **Transcription Assistance**: The visualization tools can assist in transcribing difficult-to-hear audio by isolating specific frequencies or components.
+
+### On Linux
+```sudo apt-get install sonic-visualiser
