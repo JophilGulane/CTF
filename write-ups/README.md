@@ -172,25 +172,6 @@ OS details: Linux 3.2 - 4.9
 `msfconsole` 
 ```
 
-### INSPECTION STEPS YOU CAN TAKE
-
-**CTRL+U/Inspect**
-
-**Login related **
-	Inspect then check css, javascript, php, or javascript embedded pages
-	Navigate application<cookies<edit value to true
-**Cookies**
-	Navigate to inspect<application<cookies<edit value
-**Javascript**
-If given javascript code try bookmarking the website then edit the bookmark putting the javascript code as the URL
-
-**Navigation**
-Append on given link  `/robots.txt`
-Append on given link `/.DS_Store`
-A .DS_Store, short for Desktop Services Store, is an invisible file on the macOS operating system that gets automatically created anytime you look into a folder with ‘Finder.’ This file will then follow the folder everywhere it goes, including when archived, like in ‘ZIP.’
-
-
-
 -   **Example Output**:
 
 ```plaintext
@@ -201,6 +182,25 @@ msf exploit(ms17_010_eternalblue) > run
 [*] 192.168.1.100:445 - Connecting to target...
 [*] 192.168.1.100:445 - Exploit succeeded
 ```
+
+### INSPECTION STEPS YOU CAN TAKE
+
+**CTRL+U/Inspect**
+
+**Login related**
+	Inspect then check css, javascript, php, or javascript embedded pages
+	Navigate application<cookies<edit value to true
+**Cookies**
+	Navigate to `inspect<application<cookies<edit value`
+ 
+**Javascript**
+If given javascript code try bookmarking the website then edit the bookmark putting the javascript code as the URL
+
+**Navigation**
+Append on given link  `/robots.txt`
+Append on given link `/.DS_Store`
+A .DS_Store, short for Desktop Services Store, is an invisible file on the macOS operating system that gets automatically created anytime you look into a folder with ‘Finder.’ This file will then follow the folder everywhere it goes, including when archived, like in ‘ZIP.’
+
 
 ## Forensics
 
