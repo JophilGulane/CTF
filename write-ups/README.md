@@ -716,19 +716,22 @@ it should print the flag.txt instead of the banner
 ## Filters
 Display Filters: Use these to filter packets based on specific criteria. Some common filters include:
 
-`http` : Filters for HTTP traffic.
-`dns` : Filters for DNS traffic.
-`tcp.port == 80 `: Filters for packets on port 80 (HTTP).
-`ip.addr == 192.168.1.1`: Filters packets involving a specific IP address.
-`frame contains "flag"`: Filters packets containing the word "flag".
-`Follow TCP/UDP Stream`: Right-click on a packet, then select “Follow” -> “TCP Stream” or “UDP Stream” to see the full conversation between a client and server. This can reveal flags embedded in communications.
+- `http` : Filters for HTTP traffic.
+- `dns` : Filters for DNS traffic.
+- `tcp.port == 80 `: Filters for packets on port 80 (HTTP).
+- `ip.addr == 192.168.1.1`: Filters packets involving a specific IP address.
+- `frame contains "flag"`: Filters packets containing the word "flag".
+- `Follow TCP/UDP Stream`: `Right-click` on a packet, then select `“Follow” -> “TCP Stream” `or `“UDP Stream”` to see the full conversation between a client and server. This can reveal flags embedded in communications.
 
 
 ## Inspecting Protocols
-`HTTP` : Look for GET and POST requests. Often flags can be hidden in URLs, headers, or responses.
-`DNS` : Investigate queries and responses. Sometimes flags are encoded in domain names or response data.
-`FTP/SMTP/IMAP` : If these protocols are present, check for transferred files or emails which may contain flags.
-`ICMP` : Occasionally, flags are hidden in ICMP packets (like ping requests/replies).
+- `HTTP` : Look for GET and POST requests. Often flags can be hidden in URLs, headers, or responses.
+- `DNS` : Investigate queries and responses. Sometimes flags are encoded in domain names or response data.
+- `FTP/SMTP/IMAP` : If these protocols are present, check for transferred files or emails which may contain flags.
+- `ICMP` : Occasionally, flags are hidden in ICMP packets (like ping requests/replies).
+
+
+
 
 ## Search and Find
 
