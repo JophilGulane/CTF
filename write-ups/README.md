@@ -795,8 +795,8 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 (crdts:https://zomry1.github.io/webnet0/)
 
 - decrypting TLS stream with  provided pcap and KEY
-`ssldump -r capture.pcap -k picopico.key -d`
+- `ssldump -r capture.pcap -k picopico.key -d`
 
 - Capturing the flag directly
-`ssldump -r capture.pcap -k picopico.key -d | grep -C 5 pico`
+- `ssldump -r capture.pcap -k picopico.key -d | grep -C 5 pico`
 
