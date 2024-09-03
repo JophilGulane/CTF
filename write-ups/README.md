@@ -735,8 +735,8 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 
 ## Search and Find
 
-**Find Packet** : Use **Ctrl + F** to search for specific strings, like **"flag"**, within the packet list or details.
-**String Search** : In the `“Find Packet”` window, switch to `“String”` search, then choose to search in packet bytes, packet details, or packet list.
+- **Find Packet** : Use **Ctrl + F** to search for specific strings, like **"flag"**, within the packet list or details.
+- **String Search** : In the `“Find Packet”` window, switch to `“String”` search, then choose to search in packet bytes, packet details, or packet list.
 
 ## Reassembling Data
 
@@ -763,10 +763,10 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 **SSL/TLS Decryption**: If you have access to the private key, Wireshark can decrypt SSL/TLS traffic, revealing the plaintext data.
 
 ## Exporting Data
-Export Packets: `Use File -> Export Specified Packets` to save only the relevant packets.
-Export As CSV/JSON: You can export packet data in different formats for further analysis using` File -> Export Packet Dissections`.
+- Export Packets: `Use File -> Export Specified Packets` to save only the relevant packets.
+- Export As CSV/JSON: You can export packet data in different formats for further analysis using` File -> Export Packet Dissections`.
 
 ## Command Line (tshark)
-Automate Searches: Use tshark with filters and redirections in command line to automate searching and extraction of potential flags.
-Extract Specific Data: Use `fields with -T fields -e field_name` to extract specific parts of packet data.
+- Automate Searches: Use tshark with filters and redirections in command line to automate searching and extraction of potential flags.
+- Extract Specific Data: Use `fields with -T fields -e field_name` to extract specific parts of packet data.
 
