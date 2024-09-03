@@ -69,8 +69,7 @@ A PNG file starts with an eight-byte signature (refer to hex editor image on the
 |--------------|---------|
 | 89           | Has the high bit set to detect transmission systems that do not support 8-bit data and to reduce the chance that a text file is mistakenly interpreted as a PNG, or vice versa. |
 | 50 4E 47     | In ASCII, the letters PNG, allowing a person to identify the format easily if it is viewed in a text editor. |
-| 0D 0A        | A DOS-style line ending (CRLF) to detect DOS-Unix line ending conversion o![PNG-Gradient_hex](https://github.com/user-attachments/assets/ffa7666f-0b44-42be-bdcf-0c052594b6fb)
-f the data. |
+| 0D 0A        | A DOS-style line ending (CRLF) to detect DOS-Unix line ending conversion of the data. |
 | 1A           | A byte that stops display of the file under DOS when the command `type` has been used—the end-of-file character. |
 | 0A           | A Unix-style line ending (LF) to detect Unix-DOS line ending conversion. |
 
