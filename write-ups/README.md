@@ -653,3 +653,16 @@ john --restore
 `sudo apt-get install sonic-visualiser` 
 ```
 
+## Symlinks
+symlinks (ln)
+If there is a file like flag.txt that we have no permission to access (even with chmod) and there's a file for example named banner, we can link that banner oso that when it runs, it is redirected to the flag.txt
+
+ex. 
+remove the banner file first
+$ rm banner
+locate the flag.txt
+make the ln file
+$ln -s /<location>/flag.txt banner
+exit out the program and enter again
+it should print the flag.txt instead of the banner
+
