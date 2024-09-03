@@ -1,4 +1,4 @@
-## Important Links
+ ## Important Links
 + [CTF Write-Ups](https://ctftime.org/writeups)
 + [p0isonp4wn - Hack4Gov 2019 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-hack4gov-2019-ctf-writeups-9c405f4d9e16)
 + [p0isonp4wn - Haxxor4.0 CTF Writeups](https://james-mercado-work.medium.com/p0isonp4wn-haxxor4-0-ctf-writeups-31ca7ce6570d)
@@ -740,27 +740,27 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 
 ## Reassembling Data
 
-**Reassemble TCP Streams** : Sometimes data is split across multiple packets. Use the “Follow TCP Stream” feature to reassemble this data.
-**Export Objects**: If you see `HTTP, SMB, or other protocols` that can transfer files, you can export these objects (e.g., files, images) from the capture via `File -> Export Objects`.
+- **Reassemble TCP Streams** : Sometimes data is split across multiple packets. Use the “Follow TCP Stream” feature to reassemble this data.
+- **Export Objects**: If you see `HTTP, SMB, or other protocols` that can transfer files, you can export these objects (e.g., files, images) from the capture via `File -> Export Objects`.
 
 ## Analyzing Payloads
 
 **Hex/ASCII View**: In the `Packet Bytes Pane`, you can see the `raw `payload. Flags are often hidden in` ASCII data or as hex-encoded strings`.
-**Decode As**: If you suspect that a certain protocol isn't being decoded correctly, right-click on a packet and choose `"Decode As"` to manually set the protocol.
+- **Decode As**: If you suspect that a certain protocol isn't being decoded correctly, right-click on a packet and choose `"Decode As"` to manually set the protocol.
 
 ## Statistics and Summaries
 
-**Protocol Hierarchy**: `Statistics -> Protocol Hierarchy` shows a breakdown of protocols in the capture, helping you quickly identify which protocols are in use.
-**Conversations**: `Statistics -> Conversations` displays communication sessions between IPs. This is useful to identify suspicious or significant exchanges.
-**Endpoints**: `Statistics -> Endpoints` gives a list of all IPs, MAC addresses, etc., that have communicated.
+- **Protocol Hierarchy**: `Statistics -> Protocol Hierarchy` shows a breakdown of protocols in the capture, helping you quickly identify which protocols are in use.
+-  **Conversations**: `Statistics -> Conversations` displays communication sessions between IPs. This is useful to identify suspicious or significant exchanges.
+- **Endpoints**: `Statistics -> Endpoints` gives a list of all IPs, MAC addresses, etc., that have communicated.
 
 ## Time and Sequence Analysis
 
-**Time Shift**: If timestamps are important, you can adjust them via `Edit -> Time Shift` to sync them with other data sources.
-**TCP Stream Graphs**: `Statistics -> TCP Stream Graphs` can visualize data flows, helping spot anomalies.
+- **Time Shift**: If timestamps are important, you can adjust them via `Edit -> Time Shift` to sync them with other data sources.
+- **TCP Stream Graphs**: `Statistics -> TCP Stream Graphs` can visualize data flows, helping spot anomalies.
 
 ## Decryption
-**SSL/TLS Decryption**: If you have access to the private key, Wireshark can decrypt SSL/TLS traffic, revealing the plaintext data.
+- **SSL/TLS Decryption**: If you have access to the private key, Wireshark can decrypt SSL/TLS traffic, revealing the plaintext data.
 
 ## Exporting Data
 - Export Packets: `Use File -> Export Specified Packets` to save only the relevant packets.
