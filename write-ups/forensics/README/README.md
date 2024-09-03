@@ -8,6 +8,10 @@
 5. Remove The Reverse Method
 6. This Hex Should be The Big Endianness
 
++ Pro Tip
++ The Reversed of The Word into Hex is The Small Endianness
++ The Word into Hex is The Big Endianness
+
 Endianness refers to the order in which bytes are stored in memory. This concept is crucial when dealing with binary data and can affect how you interpret data during Capture The Flag (CTF) challenges. There are two primary types of endianness:
 
 ## 1. Little-Endian
