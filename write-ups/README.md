@@ -702,3 +702,68 @@ $ln -s /<location>/flag.txt banner
 exit out the program and enter again
 it should print the flag.txt instead of the banner
 
+# WIRESHARK  NAVIGATION 
+
+## Basic Navigation
+
+### Packet List Pane:
+	Displays all captured packets. Each row represents a packet, showing details like timestamp, source/destination IP, protocol, and info.
+### Packet Details Pane:
+	Provides detailed information about the selected packet. This is where you can drill down into the protocol layers (Ethernet, IP, TCP, HTTP, DNS, etc.).
+### Packet Bytes Pane: 
+	Shows the raw data of the packet in both hexadecimal and ASCII format. Useful for inspecting data within packets.
+
+## Filters
+Display Filters: Use these to filter packets based on specific criteria. Some common filters include:
+
+`http` : Filters for HTTP traffic.
+`dns` : Filters for DNS traffic.
+`tcp.port == 80 `: Filters for packets on port 80 (HTTP).
+`ip.addr == 192.168.1.1`: Filters packets involving a specific IP address.
+`frame contains "flag"`: Filters packets containing the word "flag".
+`Follow TCP/UDP Stream`: Right-click on a packet, then select “Follow” -> “TCP Stream” or “UDP Stream” to see the full conversation between a client and server. This can reveal flags embedded in communications.
+
+
+## Inspecting Protocols
+`HTTP` : Look for GET and POST requests. Often flags can be hidden in URLs, headers, or responses.
+`DNS` : Investigate queries and responses. Sometimes flags are encoded in domain names or response data.
+`FTP/SMTP/IMAP` : If these protocols are present, check for transferred files or emails which may contain flags.
+`ICMP` : Occasionally, flags are hidden in ICMP packets (like ping requests/replies).
+
+## Search and Find
+
+**Find Packet** : Use **Ctrl + F** to search for specific strings, like **"flag"**, within the packet list or details.
+**String Search** : In the `“Find Packet”` window, switch to `“String”` search, then choose to search in packet bytes, packet details, or packet list.
+
+## Reassembling Data
+
+**Reassemble TCP Streams** : Sometimes data is split across multiple packets. Use the “Follow TCP Stream” feature to reassemble this data.
+**Export Objects**: If you see `HTTP, SMB, or other protocols` that can transfer files, you can export these objects (e.g., files, images) from the capture via `File -> Export Objects`.
+
+## Analyzing Payloads
+
+**Hex/ASCII View**: In the `Packet Bytes Pane`, you can see the `raw `payload. Flags are often hidden in` ASCII data or as hex-encoded strings`.
+**Decode As**: If you suspect that a certain protocol isn't being decoded correctly, right-click on a packet and choose `"Decode As"` to manually set the protocol.
+
+## Statistics and Summaries
+
+**Protocol Hierarchy**: `Statistics -> Protocol Hierarchy` shows a breakdown of protocols in the capture, helping you quickly identify which protocols are in use.
+**Conversations**: `Statistics -> Conversations` displays communication sessions between IPs. This is useful to identify suspicious or significant exchanges.
+**Endpoints**: `Statistics -> Endpoints` gives a list of all IPs, MAC addresses, etc., that have communicated.
+
+## Time and Sequence Analysis
+
+**Time Shift**: If timestamps are important, you can adjust them via `Edit -> Time Shift` to sync them with other data sources.
+**TCP Stream Graphs**: `Statistics -> TCP Stream Graphs` can visualize data flows, helping spot anomalies.
+
+## Decryption
+**SSL/TLS Decryption**: If you have access to the private key, Wireshark can decrypt SSL/TLS traffic, revealing the plaintext data.
+
+## Exporting Data
+Export Packets: `Use File -> Export Specified Packets` to save only the relevant packets.
+Export As CSV/JSON: You can export packet data in different formats for further analysis using` File -> Export Packet Dissections`.
+
+## Command Line (tshark)
+Automate Searches: Use tshark with filters and redirections in command line to automate searching and extraction of potential flags.
+Extract Specific Data: Use `fields with -T fields -e field_name` to extract specific parts of packet data.
+
