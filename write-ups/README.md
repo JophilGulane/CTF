@@ -63,6 +63,21 @@ Challenges based on analyzing digital evidence.
 4. **Examine Strings**: Use the `strings` command to find readable text within binary files, which might contain clues or even the flag.
 5. **Memory Analysis**: For memory dump files, use tools like `Volatility` to extract useful information, like running processes, network connections, or cached data.
 6. **Network Forensics**: If provided with packet capture (PCAP) files, use tools like `Wireshark` to analyze network traffic, looking for suspicious communication or sensitive data transmission.
+   
+###### common commands for forensics
+1. `file fileName`
+2. `Exiftool fileName`
+3. `zsteg imageName`
+4. `unzip fileName`
+5. `unrar fileName`
+6. `Hexedit filename`
+7. `Hexeditor (e.g Ghex) and CTRL F`
+8. `binwalk -e  fileName`
+9. `7z x [to be extracted file]`
+10. `strings fileName | grep -i  keyword`
+
+
+
 
 ### 4. Investigation
 Challenges that require gathering information from various sources.
