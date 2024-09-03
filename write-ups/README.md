@@ -64,21 +64,6 @@ Challenges based on analyzing digital evidence.
 5. **Memory Analysis**: For memory dump files, use tools like `Volatility` to extract useful information, like running processes, network connections, or cached data.
 6. **Network Forensics**: If provided with packet capture (PCAP) files, use tools like `Wireshark` to analyze network traffic, looking for suspicious communication or sensitive data transmission.
    
-###### common commands for forensics
-1. `file fileName`
-2. `Exiftool fileName`
-3. `zsteg imageName`
-4. `unzip fileName`
-5. `unrar fileName`
-6. `Hexedit filename`
-7. `Hexeditor (e.g Ghex) and CTRL F`
-8. `binwalk -e  fileName`
-9. `7z x [to be extracted file]`
-10. `strings fileName | grep -i  keyword`
-
-#### if encountered with directory array/list
-      **example** given directory 001 - 999 
-      `for i in $(seq -w 001 999) ; do cat $i/$i; done | grep H4G`
 
 
 ### 4. Investigation
@@ -335,6 +320,24 @@ Offset(V)          Name                    PID   PPID  Thds  Hnds  Sess  Wow64
 0x81000            System                      4     0     70   340     0     0
 0x9c00             smss.exe                  320     4      2     12     0     0` 
 ```
+
+###### common commands for forensics
+1. `file fileName`
+2. `Exiftool fileName`
+3. `zsteg imageName`
+4. `unzip fileName`
+5. `unrar fileName`
+6. `Hexedit filename`
+7. `Hexeditor (e.g Ghex) and CTRL F`
+8. `binwalk -e  fileName`
+9. `7z x [to be extracted file]`
+10. `strings fileName | grep -i  keyword`
+
+#### if encountered with directory array/list
+      **example** given directory 001 - 999 
+      `for i in $(seq -w 001 999) ; do cat $i/$i; done | grep H4G`
+
+
 
 ## Investigation
 
