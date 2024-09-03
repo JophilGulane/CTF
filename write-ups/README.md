@@ -770,3 +770,25 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 - Automate Searches: Use tshark with filters and redirections in command line to automate searching and extraction of potential flags.
 - Extract Specific Data: Use `fields with -T fields -e field_name` to extract specific parts of packet data.
 
+# Example filtering suspicious redundant conversation request on wireshark
+
+`tshark -nr shark2.pcapng -Y 'dns' | grep -v '8.8.8.8' | grep -v response | grep local | awk '{print $12}' | sed -e 's/\..*//'`
+`tshark -nr shark2.pcapng -Y 'dns' | grep -v '8.8.8.8' | grep -v response | grep local | awk '{print $12}' | sed -e 's/\..*//'`
+
+### command exaplanation breakdown
+
+- `tshark -nr shark2.pcapng -Y 'dns'`: Reads the shark2.pcapng file and filters to display only DNS-related packets.
+
+- `grep -v '8.8.8.8'`: Excludes any lines that contain the IP address `8.8.8.8`, which is commonly used by Google's public DNS servers.
+
+- `grep -v response`: Excludes any lines that contain the word `"response,"` focusing on `DNS` queries.
+
+- `grep local`: Filters lines that contain the word `"local,"` likely targeting .local domains or similar.
+
+- `awk '{print $12}'`: Extracts the 12th field from each line. This field might represent the DNS query name or another relevant piece of data, depending on the packet structure.
+
+- `sed -e 's/\..*//'`: Removes everything after the first dot (.) in the `12th field`, leaving only the initial part of the domain or name.
+
+
+
+
