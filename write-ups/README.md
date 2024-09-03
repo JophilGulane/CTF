@@ -76,7 +76,9 @@ Challenges based on analyzing digital evidence.
 9. `7z x [to be extracted file]`
 10. `strings fileName | grep -i  keyword`
 
-
+#### if encountered with directory array/list
+      **example** given directory 001 - 999 
+      `for i in $(seq -w 001 999) ; do cat $i/$i; done | grep H4G`
 
 
 ### 4. Investigation
