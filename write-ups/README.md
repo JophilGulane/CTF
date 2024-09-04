@@ -928,7 +928,7 @@ This saves the output in a normal format to scan_results.txt.
 ```bash
 nmap -oX scan_results.xml 192.168.1.1
 ```
-#### For a grepable format:
+##### For a grepable format:
 
 ```bash
 nmap -oG scan_results.grep 192.168.1.1
