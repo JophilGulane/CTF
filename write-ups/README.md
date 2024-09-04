@@ -951,3 +951,64 @@ sudo nmap -sV -O -oN detailed_scan.txt 192.168.1.1
 
 # Important Scripts 
 This command combines service version detection, OS detection, and saves the output to detailed_scan.txt.
+
+# Hashcat
+
+To use Hashcat for cracking passwords on ZIP, RAR, or other file types, you'll need to follow these steps. Hashcat requires the hash of the password you want to crack, so the first step is to extract the hash from the file.
+
+## 1. Extract the Hash from the File
+### For ZIP files:
+
+You can use a tool like zip2john from the John the Ripper suite to extract the hash.
+Command:
+```bash
+zip2john encrypted.zip > zip_hash.txt
+```
+This will generate a hash file zip_hash.txt containing the hash you can use with Hashcat.
+### For RAR files:
+
+Similarly, you can use rar2john to extract the hash.
+Command:
+```bash
+rar2john encrypted.rar > rar_hash.txt
+```
+This will generate a hash file rar_hash.txt.
+### For 7z (7-Zip) files:
+
+You can use a tool like 7z2hashcat to extract the hash.
+Command:
+```bash
+7z2hashcat.pl encrypted.7z > 7z_hash.txt
+```
+This will generate a hash file 7z_hash.txt.
+## 2. Identify the Correct Hash Mode
+Hashcat requires you to specify the hash type using a specific mode identifier. Here are some common modes for file types:
+
+### ZIP: 
+For ZIP: Use mode 13600.
+### RAR:
+For RAR3: Use mode 12500.
+For RAR5: Use mode 13000.
+7z: Use mode 11600.
+## 3. Run Hashcat with the Extracted Hash
+With the hash file ready, you can now use Hashcat to attempt to crack the password.
+
+### Example Command:
+```bash
+hashcat -m [hash_mode] -a 0 hash_file.txt wordlist.txt
+Replace [hash_mode] with the appropriate number from the list above (e.g., 13600 for ZIP).
+Replace hash_file.txt with the path to your hash file (e.g., zip_hash.txt).
+Replace wordlist.txt with the path to your wordlist file (e.g., rockyou.txt).
+```
+### Example for a ZIP File:
+```bash
+hashcat -m 13600 -a 0 zip_hash.txt /path/to/wordlist.txt
+```
+## 4. Monitor the Cracking Process
+Hashcat will now attempt to crack the password using the provided wordlist. You can monitor the progress in the terminal, and if successful, the cracked password will be displayed.
+
+## 5. Additional Options
+You can use a brute-force attack by changing the attack mode to -a 3.
+You can specify rules, GPU options, or other advanced features depending on your hardware and requirements.
+## 6. Recovering the Password
+If Hashcat successfully cracks the password, it will display it in the output, and you can use it to unlock the file.
