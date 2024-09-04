@@ -837,3 +837,114 @@ convert \( +append qr_1.png qr_2.png qr_3.png \) \( +append qr_4.png qr_5.png qr
 3. \( +append qr_7.png qr_8.png qr_9.png \): This merges the bottom row (7th, 8th, 9th pieces) horizontally.
 + -append: This stacks the three rows vertically to form the complete QR code.
 + qr_combined.png: This is the output file where the combined image will be saved.
+
+
+## Basic Use of Nmap
+Nmap (Network Mapper) is a powerful open-source tool used for network exploration, security auditing, and network discovery. This tutorial will guide you through the basic use of Nmap to help you get started with network scanning.
+
+### Step 1: Installing Nmap
+For Ubuntu/Debian-based systems:
+```bash
+sudo apt-get install nmap
+```
+
+### Step 2: Basic Nmap Commands
+Here are some basic Nmap commands to help you get started:
+
+#### 1. Scanning a Single IP Address
+To scan a single IP address, use the following command:
+
+```bash
+nmap 192.168.1.1
+```
+This command will perform a basic scan of the target IP (192.168.1.1) and provide information on the open ports and services running on that IP.
+
+#### 2. Scanning a Range of IP Addresses
+You can also scan a range of IP addresses using Nmap:
+
+```bash
+nmap 192.168.1.1-254
+```
+This command will scan all IP addresses from 192.168.1.1 to 192.168.1.254 within the network.
+
+#### 3. Scanning a Specific Port
+To scan a specific port, use the -p option followed by the port number:
+
+```bash
+nmap -p 80 192.168.1.1
+```
+This command scans port 80 (HTTP) on the target IP (192.168.1.1).
+
+#### 4. Scanning Multiple Ports
+You can scan multiple ports by specifying them with a comma:
+
+```bash
+nmap -p 22,80,443 192.168.1.1
+```
+This command scans ports 22 (SSH), 80 (HTTP), and 443 (HTTPS) on the target IP.
+
+#### 5. Performing a Quick Scan
+A quick scan focuses on the 100 most common ports:
+
+```bash
+nmap -F 192.168.1.1
+```
+The -F option tells Nmap to perform a fast scan.
+
+#### 6. Service Version Detection
+To identify the versions of services running on open ports, use the -sV option:
+
+```bash
+nmap -sV 192.168.1.1
+```
+This command attempts to determine the version of the services running on the open ports of the target IP.
+
+#### 7. Operating System Detection
+Nmap can also detect the operating system of the target by using the -O option:
+
+```bash
+sudo nmap -O 192.168.1.1
+```
+This command attempts to determine the target's operating system. Note that OS detection requires root privileges, so you may need to use sudo.
+
+#### 8. Scanning a Host to Determine if it is Up
+To check if a host is up or reachable, you can use:
+
+```bash
+nmap -sn 192.168.1.1
+```
+The -sn option tells Nmap to only perform a ping scan, which checks if the host is online without doing a full port scan.
+
+#### 9. Saving Scan Results to a File
+You can save the results of an Nmap scan to a file using the -o options:
+
+```bash
+nmap -oN scan_results.txt 192.168.1.1
+```
+This saves the output in a normal format to scan_results.txt.
+
+##### For XML format:
+
+```bash
+nmap -oX scan_results.xml 192.168.1.1
+```
+#### For a grepable format:
+
+```bash
+nmap -oG scan_results.grep 192.168.1.1
+```
+#### 10. Performing a Verbose Scan
+To get more detailed information about the scanning process, use the -v option:
+
+```bash
+nmap -v 192.168.1.1
+```
+The -v option increases verbosity, showing more detailed output.
+
+### Step 3: Combining Options
+Nmap allows you to combine multiple options to perform more complex scans. For example, to perform a service version detection scan with OS detection and save the results to a file, you can use:
+
+```bash
+sudo nmap -sV -O -oN detailed_scan.txt 192.168.1.1
+```
+This command combines service version detection, OS detection, and saves the output to detailed_scan.txt.
