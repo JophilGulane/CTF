@@ -800,3 +800,40 @@ Display Filters: Use these to filter packets based on specific criteria. Some co
 - Capturing the flag directly
 - `ssldump -r capture.pcap -k picopico.key -d | grep -C 5 pico`
 
+
+# How to Reconstruct a QR Code from 9 Pieces
+### Step 1: Install ImageMagick
+First, you need to install ImageMagick, a powerful image manipulation tool that includes the convert command.
+
+For Ubuntu/Debian-based systems:
+```bash
+sudo apt-get install imagemagick
+```
+
+### Step 2: Prepare Your QR Code Pieces
+Ensure that your 9 QR code pieces are named consistently and placed in the same directory. For example, name them as follows:
+
++ qr_1.png (top-left)
++ qr_2.png (top-center)
++ qr_3.png (top-right)
++ qr_4.png (middle-left)
++ qr_5.png (middle-center)
++ qr_6.png (middle-right)
++ qr_7.png (bottom-left)
++ qr_8.png (bottom-center)
++ qr_9.png (bottom-right)
+
+Ensure that each piece aligns correctly when combined.
+
+### Step 3: Reconstruct the QR Code in One Command
+You can combine the 9 pieces into a single QR code using the following one-liner command:
+
+```bash
+convert \( +append qr_1.png qr_2.png qr_3.png \) \( +append qr_4.png qr_5.png qr_6.png \) \( +append qr_7.png qr_8.png qr_9.png \) -append qr_combined.png
+```
+#### Explanation of the Command:
+1. \( +append qr_1.png qr_2.png qr_3.png \): This merges the top row (1st, 2nd, 3rd pieces) horizontally.
+2. \( +append qr_4.png qr_5.png qr_6.png \): This merges the middle row (4th, 5th, 6th pieces) horizontally.
+3. \( +append qr_7.png qr_8.png qr_9.png \): This merges the bottom row (7th, 8th, 9th pieces) horizontally.
++ -append: This stacks the three rows vertically to form the complete QR code.
++ qr_combined.png: This is the output file where the combined image will be saved.
