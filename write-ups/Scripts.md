@@ -125,3 +125,25 @@ password_file = 'passwords.txt'
 
 rar_brute_force(rar_file, password_file)
 ```
+
+## Calculate Mod 37
+```python
+def decode(number):
+    r = number % 37
+    return r
+
+def main():
+    f = open("message.txt", "r", encoding="UTF-8")
+    lst = f.read().split()
+    # print(lst[0])
+
+    dec_lst = []
+
+    for i in range(len(lst)):
+        dec_lst.append(decode(int(lst[i])))
+
+    print(dec_lst)
+
+if __name__ == '__main__':
+    main()
+```
