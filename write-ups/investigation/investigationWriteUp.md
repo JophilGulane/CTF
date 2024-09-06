@@ -7,7 +7,7 @@
 **logs to look for:** 
 
 - Application
-     log applications pertaining to applications
+-     log applications pertaining to applications
 - Security
 -      Audit failures
 -     PowerShell operations
