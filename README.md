@@ -1,4 +1,4 @@
- # A Comprehensive Guide to Capture the Flag Challenges
+# A Comprehensive Guide to Capture the Flag Challenges
 
 ## Guide Links
 [The CTF Primer](https://primer.picoctf.org/)
