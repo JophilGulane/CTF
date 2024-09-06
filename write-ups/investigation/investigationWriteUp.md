@@ -11,13 +11,16 @@
       log applications pertaining to applications
   ```
 - Security
--      Audit failures
--     PowerShell operations
+  ```plaintext
+      Audit failures
+      PowerShell operations
+  ```
 - Set-up
 - System
--     the computer has stopped
--     trouble shooting something like update services
-
+```plaintext
+     the computer has stopped
+     trouble shooting something like update services
+```
 **Event ID cheatsheet:**
 - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx?i=j
 
