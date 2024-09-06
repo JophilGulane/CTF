@@ -18,8 +18,8 @@
 - Set-up
 - System
 ```plaintext
-     the computer has stopped
-     trouble shooting something like update services
+      the computer has stopped
+      trouble shooting something like update services
 ```
 **Event ID cheatsheet:**
 - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx?i=j
