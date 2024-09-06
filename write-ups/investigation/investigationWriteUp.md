@@ -7,14 +7,14 @@
 **logs to look for:** 
 
 - Application
-    log applications pertaining to applications
+-     log applications pertaining to applications
 - Security
-    Audit failures
-    powerShell operations
+-      Audit failures
+-     PowerShell operations
 - Set-up
 - System
-    the computer has stopped
-    trouble shooting something like update services
+-     the computer has stopped
+-     trouble shooting something like update services
 
 **Event ID cheatsheet:**
 - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx?i=j
