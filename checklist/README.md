@@ -1,4 +1,4 @@
-1. file
+ 1. file
 2. strings
 3. exiftool
 
